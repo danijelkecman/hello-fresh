@@ -1,0 +1,21 @@
+{
+  "name": "hello-fresh",
+  "version": "1.0.0",
+  "description": "hello-fresh food",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "danijel",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^2.0.0",
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "http-auth": "^3.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

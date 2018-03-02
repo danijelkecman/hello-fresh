@@ -1,0 +1,6 @@
+framework module Pods_HelloFresh {
+  umbrella header "Pods-HelloFresh-umbrella.h"
+
+  export *
+  module * { export * }
+}

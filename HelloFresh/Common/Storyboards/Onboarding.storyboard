@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A362a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Onboard View Controller-->
+        <scene sceneID="Jo0-j1-HiX">
+            <objects>
+                <viewController storyboardIdentifier="OnboardViewController" id="vyu-Un-j1J" customClass="OnboardViewController" customModule="HelloFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfB-Xb-6SH"/>
+                        <viewControllerLayoutGuide type="bottom" id="KhL-2Y-rgT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x2O-1r-n3c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hellofresh" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-o1-p95">
+                                <rect key="frame" x="86" y="130.5" width="148" height="135"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Itt-dD-0LX">
+                                <rect key="frame" x="0.0" y="285.5" width="320" height="157"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjS-Ze-8bn" customClass="RoundedButton" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="KiJ-xi-iLY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                        <state key="normal" title="LOG IN"/>
+                                        <connections>
+                                            <action selector="loginUserButtonHandler:" destination="vyu-Un-j1J" eventType="touchUpInside" id="BlE-GW-FNt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-l9-eW9">
+                                        <rect key="frame" x="61" y="68" width="198" height="21"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFE-nD-H9c" customClass="RoundedButton" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="109" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="8i0-kz-Pw6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                        <state key="normal" title="SIGN UP"/>
+                                        <connections>
+                                            <action selector="signupUserButtonHandlr:" destination="vyu-Un-j1J" eventType="touchUpInside" id="QQE-Nw-Xdf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OjS-Ze-8bn" secondAttribute="trailing" constant="10" id="9w0-DS-ElT"/>
+                                    <constraint firstItem="OjS-Ze-8bn" firstAttribute="leading" secondItem="Itt-dD-0LX" secondAttribute="leading" constant="10" id="jbl-yw-Rv9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZFE-nD-H9c" secondAttribute="trailing" constant="10" id="lZa-cB-cI4"/>
+                                    <constraint firstItem="ZFE-nD-H9c" firstAttribute="leading" secondItem="Itt-dD-0LX" secondAttribute="leading" constant="10" id="lqF-pF-H4V"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Itt-dD-0LX" secondAttribute="trailing" id="DEc-1D-Cyg"/>
+                            <constraint firstItem="Itt-dD-0LX" firstAttribute="top" secondItem="AFO-o1-p95" secondAttribute="bottom" constant="20" id="Qoc-lN-fmu"/>
+                            <constraint firstItem="Itt-dD-0LX" firstAttribute="centerY" secondItem="x2O-1r-n3c" secondAttribute="centerY" constant="30" id="THD-cG-kdL">
+                                <variation key="widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="AFO-o1-p95" firstAttribute="centerX" secondItem="x2O-1r-n3c" secondAttribute="centerX" id="Zz0-xG-2P3"/>
+                            <constraint firstItem="Itt-dD-0LX" firstAttribute="leading" secondItem="x2O-1r-n3c" secondAttribute="leading" id="o9Q-Yt-LhH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="OjS-Ze-8bn" id="Oyc-wS-5yy"/>
+                        <outlet property="signupButton" destination="ZFE-nD-H9c" id="hSw-UD-rjs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajc-7P-OKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="149"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="oLZ-m0-oDr">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="ndL-yc-DFz" customClass="LoginViewController" customModule="HelloFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sL8-Lc-K8h"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Jl-xH-1rF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EFq-rF-JlU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vOL-UY-fLN">
+                                <rect key="frame" x="26" y="198.5" width="268" height="111"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezA-6W-7Wf" customClass="OnboardingTextField" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="MbE-vk-v6w"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ozj-Dm-Cyf" customClass="OnboardingTextField" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="268" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="P5Z-bl-NsN"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <variation key="heightClass=regular" axis="vertical"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z3e-UD-ATV">
+                                <rect key="frame" x="66" y="124.5" width="189" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bd-JZ-uRn">
+                                        <rect key="frame" x="39.5" y="0.0" width="110.5" height="44"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good to see you again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wi5-r3-BB0">
+                                        <rect key="frame" x="0.0" y="44" width="189" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wi5-r3-BB0" firstAttribute="centerX" secondItem="Z3e-UD-ATV" secondAttribute="centerX" id="BY2-cf-vcM"/>
+                                    <constraint firstAttribute="height" constant="63.329999999999998" id="kCu-QC-G0T"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbc-Mx-TvI" customClass="RoundedButton" customModule="HelloFresh" customModuleProvider="target">
+                                <rect key="frame" x="10" y="319.5" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ofN-fK-hJs"/>
+                                    <constraint firstAttribute="height" constant="48" id="u2l-w7-FR2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                <state key="normal" title="LOG IN"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="u2l-w7-FR2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="ofN-fK-hJs"/>
+                                        <include reference="u2l-w7-FR2"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginUserButtonHandler:" destination="ndL-yc-DFz" eventType="touchUpInside" id="qgN-uu-mwF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDv-Bo-JMi">
+                                <rect key="frame" x="64" y="377.5" width="192" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vOL-UY-fLN" firstAttribute="centerY" secondItem="EFq-rF-JlU" secondAttribute="centerY" constant="30" id="0Ym-b9-zbE">
+                                <variation key="heightClass=regular" constant="-30"/>
+                            </constraint>
+                            <constraint firstItem="kDv-Bo-JMi" firstAttribute="top" secondItem="nbc-Mx-TvI" secondAttribute="bottom" constant="10" id="1as-IU-cA1"/>
+                            <constraint firstItem="Z3e-UD-ATV" firstAttribute="centerX" secondItem="EFq-rF-JlU" secondAttribute="centerX" id="4Nm-Lv-zJn"/>
+                            <constraint firstItem="vOL-UY-fLN" firstAttribute="leading" secondItem="EFq-rF-JlU" secondAttribute="leadingMargin" constant="10" id="4xZ-1r-qDC"/>
+                            <constraint firstItem="nbc-Mx-TvI" firstAttribute="top" secondItem="vOL-UY-fLN" secondAttribute="bottom" constant="10" id="8xk-19-cHi"/>
+                            <constraint firstItem="kDv-Bo-JMi" firstAttribute="centerX" secondItem="EFq-rF-JlU" secondAttribute="centerX" id="Ehn-XH-NUW"/>
+                            <constraint firstItem="Z3e-UD-ATV" firstAttribute="top" secondItem="sL8-Lc-K8h" secondAttribute="bottom" constant="30" id="GtE-ie-oF8"/>
+                            <constraint firstItem="nbc-Mx-TvI" firstAttribute="leading" secondItem="EFq-rF-JlU" secondAttribute="leading" constant="16" id="J2e-Pj-k3V"/>
+                            <constraint firstItem="kDv-Bo-JMi" firstAttribute="top" secondItem="nbc-Mx-TvI" secondAttribute="bottom" constant="10" id="LpB-GS-pjT"/>
+                            <constraint firstAttribute="trailing" secondItem="nbc-Mx-TvI" secondAttribute="trailing" constant="16" id="Vbc-rY-95m"/>
+                            <constraint firstItem="vOL-UY-fLN" firstAttribute="top" secondItem="Z3e-UD-ATV" secondAttribute="bottom" constant="10" id="VsL-u5-PUe"/>
+                            <constraint firstAttribute="trailing" secondItem="nbc-Mx-TvI" secondAttribute="trailing" constant="10" id="e8j-3t-FFY"/>
+                            <constraint firstItem="kDv-Bo-JMi" firstAttribute="centerX" secondItem="EFq-rF-JlU" secondAttribute="centerX" id="gDT-QP-uYj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vOL-UY-fLN" secondAttribute="trailing" constant="10" id="jJb-K6-ag4"/>
+                            <constraint firstAttribute="trailing" secondItem="vOL-UY-fLN" secondAttribute="trailing" constant="10" id="jaw-23-yu9"/>
+                            <constraint firstItem="vOL-UY-fLN" firstAttribute="leading" secondItem="EFq-rF-JlU" secondAttribute="leading" constant="10" id="sdr-t3-mvw"/>
+                            <constraint firstItem="nbc-Mx-TvI" firstAttribute="leading" secondItem="EFq-rF-JlU" secondAttribute="leading" constant="10" id="vBl-vV-Vq2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Ym-b9-zbE"/>
+                                <exclude reference="4xZ-1r-qDC"/>
+                                <exclude reference="VsL-u5-PUe"/>
+                                <exclude reference="jJb-K6-ag4"/>
+                                <exclude reference="jaw-23-yu9"/>
+                                <exclude reference="sdr-t3-mvw"/>
+                                <exclude reference="8xk-19-cHi"/>
+                                <exclude reference="e8j-3t-FFY"/>
+                                <exclude reference="vBl-vV-Vq2"/>
+                                <exclude reference="Ehn-XH-NUW"/>
+                                <exclude reference="LpB-GS-pjT"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="GtE-ie-oF8"/>
+                                <include reference="0Ym-b9-zbE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4xZ-1r-qDC"/>
+                                <include reference="VsL-u5-PUe"/>
+                                <include reference="jJb-K6-ag4"/>
+                                <exclude reference="jaw-23-yu9"/>
+                                <exclude reference="sdr-t3-mvw"/>
+                                <include reference="8xk-19-cHi"/>
+                                <exclude reference="J2e-Pj-k3V"/>
+                                <exclude reference="Vbc-rY-95m"/>
+                                <include reference="e8j-3t-FFY"/>
+                                <include reference="vBl-vV-Vq2"/>
+                                <exclude reference="1as-IU-cA1"/>
+                                <include reference="Ehn-XH-NUW"/>
+                                <include reference="LpB-GS-pjT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ezA-6W-7Wf" id="YkO-iS-mxw"/>
+                        <outlet property="loginButton" destination="nbc-Mx-TvI" id="jn9-N8-vGD"/>
+                        <outlet property="passwordTextField" destination="Ozj-Dm-Cyf" id="fRL-y8-n8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lkW-rC-CqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.875" y="151.05633802816902"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="OSw-3a-E6h">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Oo-lX-nXy" customClass="SignUpViewController" customModule="HelloFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nhv-ot-xPR"/>
+                        <viewControllerLayoutGuide type="bottom" id="B8s-O0-0gC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Fs-oIN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="doE-aB-A4c">
+                                <rect key="frame" x="10" y="197" width="300" height="174"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86G-OY-bw2" customClass="OnboardingTextField" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="qBt-ti-enN"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-qS-Vs1" customClass="OnboardingTextField" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="YcN-jY-ffk"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-pa-AmS" customClass="OnboardingTextField" customModule="HelloFresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="126" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="e2k-PX-FjV"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8XW-Nm-Cy1">
+                                <rect key="frame" x="87.5" y="122" width="145.5" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-4u-58f">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="44"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Nice to meet you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvx-d7-cBd">
+                                        <rect key="frame" x="0.0" y="44" width="145.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If8-m8-qe0" customClass="RoundedButton" customModule="HelloFresh" customModuleProvider="target">
+                                <rect key="frame" x="10" y="381" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="PmB-I3-oZs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="gqC-CM-ySn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signupUserButtonHandler:" destination="5Oo-lX-nXy" eventType="touchUpInside" id="Rvp-Eu-6Zb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="doE-aB-A4c" firstAttribute="centerY" secondItem="8bC-Fs-oIN" secondAttribute="centerY" id="BEf-1d-nJw"/>
+                            <constraint firstItem="doE-aB-A4c" firstAttribute="leading" secondItem="8bC-Fs-oIN" secondAttribute="leading" constant="10" id="Bdv-Uv-S3z"/>
+                            <constraint firstItem="doE-aB-A4c" firstAttribute="top" secondItem="8XW-Nm-Cy1" secondAttribute="bottom" constant="10" id="Hcr-tM-HZW"/>
+                            <constraint firstItem="8XW-Nm-Cy1" firstAttribute="centerX" secondItem="8bC-Fs-oIN" secondAttribute="centerX" id="TJC-Pl-rcG"/>
+                            <constraint firstAttribute="trailing" secondItem="doE-aB-A4c" secondAttribute="trailing" constant="10" id="YMo-Ns-q2y"/>
+                            <constraint firstItem="If8-m8-qe0" firstAttribute="top" secondItem="doE-aB-A4c" secondAttribute="bottom" constant="10" id="bfA-cQ-8IC"/>
+                            <constraint firstItem="If8-m8-qe0" firstAttribute="leading" secondItem="8bC-Fs-oIN" secondAttribute="leading" constant="10" id="dft-P7-ncT"/>
+                            <constraint firstAttribute="trailing" secondItem="If8-m8-qe0" secondAttribute="trailing" constant="10" id="pIa-no-ddf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Crf-qS-Vs1" id="ks5-2b-EYE"/>
+                        <outlet property="nameTextField" destination="86G-OY-bw2" id="gWB-UT-ydu"/>
+                        <outlet property="passwordTextField" destination="wPZ-pa-AmS" id="iF9-Wk-9fp"/>
+                        <outlet property="signupButton" destination="If8-m8-qe0" id="Dol-S3-Chu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="af8-Er-Mbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="149"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Bbp-pw-wo2">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XbW-JV-Oce" customClass="ProfileViewController" customModule="HelloFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PW2-BP-DWK"/>
+                        <viewControllerLayoutGuide type="bottom" id="X8G-vW-fcQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bq8-q9-Ry8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu5-QM-0WC">
+                                <rect key="frame" x="75" y="273.5" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEr-Ab-ACm" customClass="RoundedButton" customModule="HelloFresh" customModuleProvider="target">
+                                <rect key="frame" x="10" y="344.5" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ckj-N7-4rM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="logoutActionHandler:" destination="XbW-JV-Oce" eventType="touchUpInside" id="lM5-kB-e1R"/>
+                                    <action selector="signupUserButtonHandler:" destination="5Oo-lX-nXy" eventType="touchUpInside" id="1c6-hQ-Vbe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bu5-QM-0WC" firstAttribute="centerX" secondItem="bq8-q9-Ry8" secondAttribute="centerX" id="0oF-uy-dUo"/>
+                            <constraint firstAttribute="trailing" secondItem="gEr-Ab-ACm" secondAttribute="trailing" constant="10" id="Vel-nO-QDx"/>
+                            <constraint firstItem="gEr-Ab-ACm" firstAttribute="top" secondItem="Bu5-QM-0WC" secondAttribute="bottom" constant="50" id="jh2-W8-WP0"/>
+                            <constraint firstItem="Bu5-QM-0WC" firstAttribute="centerY" secondItem="bq8-q9-Ry8" secondAttribute="centerY" id="uLe-aG-XDm"/>
+                            <constraint firstItem="gEr-Ab-ACm" firstAttribute="leading" secondItem="bq8-q9-Ry8" secondAttribute="leading" constant="10" id="xAK-uR-KW1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy5-1q-v6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hellofresh" width="148" height="135"/>
+    </resources>
+</document>

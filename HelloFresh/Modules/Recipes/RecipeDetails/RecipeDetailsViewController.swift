@@ -11,40 +11,42 @@
 import UIKit
 
 final class RecipeDetailsViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-
-    // MARK: - Public properties -
-
-    var presenter: RecipeDetailsPresenterInterface!
-
-    // MARK: - Lifecycle -
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        _configure()
-        
-        presenter.viewDidLoad()
-    }
+  @IBOutlet weak var tableView: UITableView!
+  
+  // MARK: - Public properties -
+  
+  var presenter: RecipeDetailsPresenterInterface!
+  
+  // MARK: - Lifecycle -
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    // MARK: - Private Methods
+    _configure()
     
-    private func _configure() {
-        // setup nibs
-        self.title = "Recipe Details"
-        
-        // setup nibs
-        tableView.register(cellType: RecipeDetailsHeaderCell.self)
-        tableView.register(cellType: RecipeDetailsBodyCell.self)
-        tableView.register(cellType: RecipeDetailsRatingCell.self)
-        
-        
-        tableView.estimatedRowHeight = 140
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.tableFooterView = UIView()
-    }
-	
+    presenter.viewDidLoad()
+  }
+  
+  // MARK: - Private Methods
+  
+  private func _configure() {
+    // setup nibs
+    self.title = "Recipe Details"
+    
+    tableView.allowsSelection = false;
+    
+    // setup nibs
+    tableView.register(cellType: RecipeDetailsHeaderCell.self)
+    tableView.register(cellType: RecipeDetailsBodyCell.self)
+    tableView.register(cellType: RecipeDetailsRatingCell.self)
+    
+    
+    tableView.estimatedRowHeight = 140
+    tableView.rowHeight = UITableView.automaticDimension
+    
+    tableView.tableFooterView = UIView()
+  }
+  
 }
 
 // MARK: - Extensions -
@@ -52,79 +54,83 @@ final class RecipeDetailsViewController: UIViewController {
 extension RecipeDetailsViewController: RecipeDetailsViewInterface {
 }
 
-// MARK: - Table View Data Source 
+// MARK: - Table View Data Source
 
 extension RecipeDetailsViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
-        case 0:
-            let cell: RecipeDetailsHeaderCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(with: presenter.getRecipeDto())
-            cell.selectionStyle = .none
-            cell.recipeDetailsDelegate = self
-        case 1:
-            let cell: RecipeDetailsBodyCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(with: presenter.getRecipeDto())
-            cell.selectionStyle = .none
-        case 2:
-            let cell: RecipeDetailsRatingCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(with: presenter.getRecipeDto())
-            cell.selectionStyle = .none
-        default:
-            return UITableViewCell()
-        }
-        
-        return UITableViewCell()
+    switch indexPath.row {
+    case 0:
+      let cell: RecipeDetailsHeaderCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(with: presenter.getRecipe())
+      cell.selectionStyle = .none
+      cell.recipeDetailsDelegate = self
+    case 1:
+      let cell: RecipeDetailsBodyCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(with: presenter.getRecipe())
+      cell.selectionStyle = .none
+    case 2:
+      let cell: RecipeDetailsRatingCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.configure(with: presenter.getRecipe())
+      cell.selectionStyle = .none
+    default:
+      return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
+    return UITableViewCell()
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 3
+  }
+  
 }
 
 extension RecipeDetailsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-            cell.separatorInset = UIEdgeInsets.zero
-        }
-        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
-            cell.layoutMargins = UIEdgeInsets.zero
-        }
-        if cell.responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+      cell.separatorInset = UIEdgeInsets.zero
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 240
-        case 1:
-            return 150
-        case 2:
-            return 120
-        default:
-            return 0
-        }
+    if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
+      cell.layoutMargins = UIEdgeInsets.zero
     }
+    if cell.responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
+      cell.preservesSuperviewLayoutMargins = false
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    switch indexPath.row {
+    case 0:
+      return 240
+    case 1:
+      return 150
+    case 2:
+      return 120
+    default:
+      return 0
+    }
+  }
+  
 }
 
 // MARK: - Rating & Favourite Cells Delegate
 
 extension RecipeDetailsViewController: RecipeDetailsHeaderProtocol, RecipeDetailsRatingCellProtocol {
-    
-    func didChangeRatingFor(with rating: Int) {
-        
-    }
-    
-    func favouriteTapped(recipeDto: RecipeDto) {
-        presenter.updateRecipe(with: recipeDto)
-    }
-    
+  
+  func didChangeRatingFor(with rating: Float) {
+    NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: Constants.NotificationConstants.recipeUpdated), object: nil))
+    presenter.didChangeRatingFor(with: rating)
+  }
+  
+  func favouriteTapped(recipe: Recipe) {
+    NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: Constants.NotificationConstants.recipeUpdated), object: nil))
+    presenter.updateRecipe(with: recipe)
+  }
+  
 }
+
 
 
 

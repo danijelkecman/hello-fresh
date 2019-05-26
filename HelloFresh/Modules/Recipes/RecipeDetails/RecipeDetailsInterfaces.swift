@@ -21,9 +21,9 @@ protocol RecipeDetailsViewInterface: ViewInterface {
 }
 
 protocol RecipeDetailsPresenterInterface: PresenterInterface {
-    func getRecipeDto() -> RecipeDto
-    func updateRecipe(with recipeDto: RecipeDto)
-    func didChangeRatingFor(with rating: Int)
+    func getRecipe() -> Recipe
+    func updateRecipe(with recipe: Recipe)
+    func didChangeRatingFor(with rating: Float)
 }
 
 protocol RecipeDetailsInteractorInterface: InteractorInterface {

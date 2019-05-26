@@ -24,27 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Nimble.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-HelloFresh.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-HelloFreshTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-HelloFreshUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

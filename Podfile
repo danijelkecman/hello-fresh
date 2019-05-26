@@ -28,23 +28,6 @@ target 'HelloFresh' do
 
 end
 
-target 'HelloFreshTests' do
-  inherit! :search_paths
-
-  shared_pods
-
-  pod 'Quick'
-  pod 'Nimble'
-
-end
-
-target 'HelloFreshUITests' do
-  inherit! :search_paths
-
-  shared_pods
-
-end
-
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

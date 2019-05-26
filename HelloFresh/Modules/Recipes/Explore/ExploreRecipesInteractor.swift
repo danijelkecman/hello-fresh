@@ -14,8 +14,8 @@ final class ExploreRecipesInteractor {
 // MARK: - Extensions -
 
 extension ExploreRecipesInteractor: ExploreRecipesInteractorInterface {
-    func getRecipes(completion: @escaping ((Result<[RecipeDto]>, DataResponse<Any>) -> Void)) {
-        Alamofire.request(Router.recipes).responseArray { (result: Result<[RecipeDto]>, response: DataResponse<Any>) in
+    func getRecipes(completion: @escaping ((Result<[Recipe]>, DataResponse<Any>) -> Void)) {
+        Alamofire.request(Router.recipes).responseArray { (result: Result<[Recipe]>, response: DataResponse<Any>) in
             completion(result, response)
         }
     }

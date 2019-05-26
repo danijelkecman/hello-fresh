@@ -19,25 +19,25 @@ extension KeyboardObservable where Self:UIViewController {
         NotificationCenter.default
             .addObserver(self,
                          selector: #selector(keyboardWillAppear),
-                         name: NSNotification.Name.UIKeyboardWillShow,
+                         name: UIResponder.keyboardWillShowNotification,
                          object: nil)
         
         NotificationCenter.default
             .addObserver(self,
                          selector: #selector(keyboardWillHide),
-                         name: NSNotification.Name.UIKeyboardWillHide,
+                         name: UIResponder.keyboardWillHideNotification,
                          object: nil)
     }
     
     func unregisterKeyboardNotifications() {
         NotificationCenter.default
             .removeObserver(self,
-                            name: NSNotification.Name.UIKeyboardWillShow,
+                            name: UIResponder.keyboardWillShowNotification,
                             object: nil)
         
         NotificationCenter.default
             .removeObserver(self,
-                            name: NSNotification.Name.UIKeyboardWillHide,
+                            name: UIResponder.keyboardWillHideNotification,
                             object: nil)
     }
     

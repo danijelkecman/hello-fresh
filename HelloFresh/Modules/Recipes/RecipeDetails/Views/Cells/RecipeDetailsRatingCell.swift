@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RecipeDetailsRatingCellProtocol: class {
-    func didChangeRatingFor(with rating: Int)
+    func didChangeRatingFor(with rating: Float)
 }
 
 
@@ -19,17 +19,17 @@ class RecipeDetailsRatingCell: UITableViewCell, NibReusable, RatingControlProtoc
     @IBOutlet weak var ratingControl: RatingControl!
     weak var favouriteDelegate: RecipeDetailsRatingCellProtocol?
     
-    func configure(with recipeDto: RecipeDto) {
-        ratingControl.rating = recipeDto.rating ?? 0
+    func configure(with recipe: Recipe) {
+        ratingControl.rating = recipe.rating ?? 0
         ratingControl.ratingDelegate = self
-        if recipeDto.rating == nil {
+        if recipe.rating == 0 {
             recipeRatedLabel.text = "Not rated yet"
         } else {
-            recipeRatedLabel.text = "Recipe rated with: \(recipeDto.rating ?? 0)"
+            recipeRatedLabel.text = "Recipe rated with: \(recipe.rating ?? 0)"
         }
     }
     
-    func didChangeRatingWith(stars: Int) {
+    func didChangeRatingWith(stars: Float) {
         favouriteDelegate?.didChangeRatingFor(with: stars)
     }
 }

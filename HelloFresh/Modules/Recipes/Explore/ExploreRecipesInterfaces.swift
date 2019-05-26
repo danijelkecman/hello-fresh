@@ -9,7 +9,7 @@
 import Alamofire
 
 enum ExploreRecipesNavigationOption {
-    case recipeDetails(recipeDto: RecipeDto)
+    case recipeDetails(recipeId: String)
 }
 
 protocol ExploreRecipesWireframeInterface: WireframeInterface {
@@ -33,9 +33,9 @@ protocol ExploreRecipesPresenterInterface: PresenterInterface {
     func setItemImage(_ image: UIImage, at row: Int)
     // Recipe Cell Protocols
     func didSelectFavouriteWith(recipeId: String, isFavourite: Bool)
-    func didChangeRatingFor(recipeId: String, with rating: Int)
+    func didChangeRatingFor(recipeId: String, with rating: Float)
 }
 
 protocol ExploreRecipesInteractorInterface: InteractorInterface {
-    func getRecipes(completion: @escaping ((Result<[RecipeDto]>, DataResponse<Any>) -> Void))
+    func getRecipes(completion: @escaping ((Result<[Recipe]>, DataResponse<Any>) -> Void))
 }

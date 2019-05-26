@@ -25,3 +25,8 @@ enum AppStoryboard: String {
     }
 }
 
+struct Constants {
+  struct NotificationConstants {
+    static let recipeUpdated = "recipeUpdated"
+  }
+}

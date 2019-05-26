@@ -13,6 +13,7 @@ final class ExploreRecipesViewController: UIViewController {
   // MARK: - IBOutlets
   
   @IBOutlet weak var tableView: UITableView!
+  private var recipesUpdated = false
   
   // MARK: - Public properties -
   
@@ -31,6 +32,10 @@ final class ExploreRecipesViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    if recipesUpdated {
+      tableView.reloadData()
+      recipesUpdated = false
+    }
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +58,16 @@ final class ExploreRecipesViewController: UIViewController {
     
     tableView.tableFooterView = UIView()
   }
+}
+
+// MARK: - Notifications
+
+extension ExploreRecipesViewController {
+  
+  func recipeDidChanged() {
+    tableView.reloadData()
+  }
+  
 }
 
 // MARK: - Extensions -
@@ -139,7 +154,7 @@ extension ExploreRecipesViewController: TabBarItemConfigurable {
   }
   
   func configureTabBarItem() {
-    let fontAttributes = [NSAttributedStringKey.font: UIFont.tabLabelFont()]
+    let fontAttributes = [NSAttributedString.Key.font: UIFont.tabLabelFont()]
     
     tabBarItem.title = tabBarItemTitle()
     tabBarItem.image = UIImage(named: tabBarItemImageName(active: false))
@@ -151,7 +166,7 @@ extension ExploreRecipesViewController: TabBarItemConfigurable {
 // MARK: - RecipeCell Favourite Protocol -
 
 extension ExploreRecipesViewController: RecipeCellFavouriteProtocol {
-  func didChangeRatingFor(recipeId: String, with rating: Int) {
+  func didChangeRatingFor(recipeId: String, with rating: Float) {
     presenter.didChangeRatingFor(recipeId: recipeId, with: rating)
   }
   
@@ -167,7 +182,7 @@ extension ExploreRecipesViewController {
   fileprivate func downloadImage(forItemAtIndex indexPath: IndexPath) {
     let imageUrl = presenter.item(at: indexPath).imageUrl
     let url = URL(string: imageUrl)!
-    guard tasks.index(where: { $0.originalRequest?.url == url }) == nil else { return }
+    guard tasks.firstIndex(where: { $0.originalRequest?.url == url }) == nil else { return }
     let task = URLSession.shared.dataTask(with: url) { data, resposne, error in
       DispatchQueue.main.async {
         if let data = data, let image = UIImage(data: data) {
@@ -185,7 +200,7 @@ extension ExploreRecipesViewController {
   
   fileprivate func cancelDownloadingImage(forItemAtIndex indexPath: IndexPath) {
     let url = URL(string: presenter.item(at: indexPath).imageUrl)
-    guard let taskIndex = tasks.index(where: { $0.originalRequest?.url == url }) else { return }
+    guard let taskIndex = tasks.firstIndex(where: { $0.originalRequest?.url == url }) else { return }
     let task = tasks[taskIndex]
     task.cancel()
     tasks.remove(at: taskIndex)

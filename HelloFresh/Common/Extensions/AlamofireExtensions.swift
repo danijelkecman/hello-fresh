@@ -60,6 +60,7 @@ extension DataRequest {
         
         do {
           let decoder = JSONDecoder()
+          decoder.keyDecodingStrategy = .convertFromSnakeCase
           guard let data = response.data else {
             completionHandler(.failure(NetworkError.General), response)
             return
@@ -83,6 +84,7 @@ extension DataRequest {
         
         do {
           let decoder = JSONDecoder()
+          decoder.keyDecodingStrategy = .convertFromSnakeCase
           guard let data = response.data else {
             completionHandler(.failure(NetworkError.General), response)
             return

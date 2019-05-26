@@ -18,7 +18,6 @@
 		6914171A1F6E5ECE0030D5F0 /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914170C1F6E5E5F0030D5F0 /* EmailRule.swift */; };
 		693986FE1F600861004BAEE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693986FD1F600861004BAEE7 /* AppDelegate.swift */; };
 		693987051F600861004BAEE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693987041F600861004BAEE7 /* Assets.xcassets */; };
-		6939871E1F600861004BAEE7 /* HelloFreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939871D1F600861004BAEE7 /* HelloFreshUITests.swift */; };
 		693987431F600DCD004BAEE7 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939873E1F600DCD004BAEE7 /* SignUpInteractor.swift */; };
 		693987441F600DCD004BAEE7 /* SignUpInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939873F1F600DCD004BAEE7 /* SignUpInterfaces.swift */; };
 		693987451F600DCD004BAEE7 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693987401F600DCD004BAEE7 /* SignUpPresenter.swift */; };
@@ -28,7 +27,7 @@
 		693987501F600E18004BAEE7 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939874B1F600E18004BAEE7 /* PresenterInterface.swift */; };
 		693987511F600E18004BAEE7 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939874C1F600E18004BAEE7 /* ViewInterface.swift */; };
 		693987521F600E18004BAEE7 /* WireframeInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939874D1F600E18004BAEE7 /* WireframeInterface.swift */; };
-		693987541F600E59004BAEE7 /* NavigationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693987531F600E59004BAEE7 /* NavigationConstants.swift */; };
+		693987541F600E59004BAEE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693987531F600E59004BAEE7 /* Constants.swift */; };
 		693987571F600EBC004BAEE7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693987561F600EBC004BAEE7 /* Onboarding.storyboard */; };
 		6939875A1F600F21004BAEE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693987591F600F21004BAEE7 /* UIViewControllerExtensions.swift */; };
 		6939875D1F601051004BAEE7 /* LoggerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6939875C1F601051004BAEE7 /* LoggerInitializer.swift */; };
@@ -66,6 +65,8 @@
 		693987A81F6017EA004BAEE7 /* TabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693987A31F6017EA004BAEE7 /* TabBarWireframe.swift */; };
 		693987AA1F601805004BAEE7 /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693987A91F601805004BAEE7 /* Recipes.storyboard */; };
 		693987AC1F6018ED004BAEE7 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693987AB1F6018ED004BAEE7 /* TabBar.storyboard */; };
+		696168BB229A576500B48F08 /* ManagedRecipeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168BA229A576500B48F08 /* ManagedRecipeUser.swift */; };
+		696168BD229A57D800B48F08 /* ManagedRecipeUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168BC229A57D800B48F08 /* ManagedRecipeUser+CoreDataProperties.swift */; };
 		69A9B8571F6E95960040BC66 /* RecipeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9B8561F6E95960040BC66 /* RecipeDto.swift */; };
 		69A9B85A1F6E95E00040BC66 /* StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9B8591F6E95E00040BC66 /* StatusCodes.swift */; };
 		69D0774B1F652E57000F995E /* HelloFresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69D077491F652E57000F995E /* HelloFresh.xcdatamodeld */; };
@@ -132,33 +133,10 @@
 		69E096A61F6F589C00D428C2 /* RecipeDetailsBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69E0969E1F6F589C00D428C2 /* RecipeDetailsBodyCell.xib */; };
 		69E096A81F6F589C00D428C2 /* RecipeDetailsBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E096A01F6F589C00D428C2 /* RecipeDetailsBodyCell.swift */; };
 		69FFF96F1F6D7AAD002E0DD2 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFF96E1F6D7AAD002E0DD2 /* UIFontExtensions.swift */; };
-		73E7FDDA85EBD4E3F9B22C64 /* Pods_HelloFreshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FADC35528FD3E17695CBF8D /* Pods_HelloFreshTests.framework */; };
-		B0A402329C28CBE61C027854 /* Pods_HelloFreshUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023D51BEB883FDC0042C97FC /* Pods_HelloFreshUITests.framework */; };
 		C0F7F1B77000037BD2BAF2C6 /* Pods_HelloFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA55F19CD4558654912459 /* Pods_HelloFresh.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6939870F1F600861004BAEE7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 693986F21F600861004BAEE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 693986F91F600861004BAEE7;
-			remoteInfo = HelloFresh;
-		};
-		6939871A1F600861004BAEE7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 693986F21F600861004BAEE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 693986F91F600861004BAEE7;
-			remoteInfo = HelloFresh;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		023D51BEB883FDC0042C97FC /* Pods_HelloFreshUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloFreshUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B4F8D9929CA1A18149F420E /* Pods-HelloFreshUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFreshUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFreshUITests/Pods-HelloFreshUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1FADC35528FD3E17695CBF8D /* Pods_HelloFreshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloFreshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CAA98133111DC3CC54B1489 /* Pods-HelloFreshTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFreshTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFreshTests/Pods-HelloFreshTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C7FDE1F0E33F93EF883E31B /* Pods-HelloFresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFresh/Pods-HelloFresh.release.xcconfig"; sourceTree = "<group>"; };
 		691417081F6E5E5F0030D5F0 /* UsernameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameRule.swift; sourceTree = "<group>"; };
 		691417091F6E5E5F0030D5F0 /* PasswordRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
@@ -173,11 +151,6 @@
 		693986FD1F600861004BAEE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693987041F600861004BAEE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		693987091F600861004BAEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6939870E1F600861004BAEE7 /* HelloFreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloFreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		693987141F600861004BAEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		693987191F600861004BAEE7 /* HelloFreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloFreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6939871D1F600861004BAEE7 /* HelloFreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFreshUITests.swift; sourceTree = "<group>"; };
-		6939871F1F600861004BAEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6939873E1F600DCD004BAEE7 /* SignUpInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		6939873F1F600DCD004BAEE7 /* SignUpInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInterfaces.swift; sourceTree = "<group>"; };
 		693987401F600DCD004BAEE7 /* SignUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
@@ -187,7 +160,7 @@
 		6939874B1F600E18004BAEE7 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		6939874C1F600E18004BAEE7 /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		6939874D1F600E18004BAEE7 /* WireframeInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireframeInterface.swift; sourceTree = "<group>"; };
-		693987531F600E59004BAEE7 /* NavigationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationConstants.swift; sourceTree = "<group>"; };
+		693987531F600E59004BAEE7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		693987561F600EBC004BAEE7 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		693987591F600F21004BAEE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		6939875C1F601051004BAEE7 /* LoggerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInitializer.swift; sourceTree = "<group>"; };
@@ -225,6 +198,8 @@
 		693987A31F6017EA004BAEE7 /* TabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarWireframe.swift; sourceTree = "<group>"; };
 		693987A91F601805004BAEE7 /* Recipes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		693987AB1F6018ED004BAEE7 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		696168BA229A576500B48F08 /* ManagedRecipeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedRecipeUser.swift; sourceTree = "<group>"; };
+		696168BC229A57D800B48F08 /* ManagedRecipeUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedRecipeUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69A9B8561F6E95960040BC66 /* RecipeDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDto.swift; sourceTree = "<group>"; };
 		69A9B8591F6E95E00040BC66 /* StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodes.swift; sourceTree = "<group>"; };
 		69D0774A1F652E57000F995E /* HelloFresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloFresh.xcdatamodel; sourceTree = "<group>"; };
@@ -291,8 +266,6 @@
 		69E0969E1F6F589C00D428C2 /* RecipeDetailsBodyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeDetailsBodyCell.xib; sourceTree = "<group>"; };
 		69E096A01F6F589C00D428C2 /* RecipeDetailsBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsBodyCell.swift; sourceTree = "<group>"; };
 		69FFF96E1F6D7AAD002E0DD2 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
-		6EEEAEDA584DBF3B4995C31C /* Pods-HelloFreshUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFreshUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFreshUITests/Pods-HelloFreshUITests.release.xcconfig"; sourceTree = "<group>"; };
-		79D3DF6BB336E872CC5D3849 /* Pods-HelloFreshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFreshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFreshTests/Pods-HelloFreshTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92FA55F19CD4558654912459 /* Pods_HelloFresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloFresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58528EE86153D595F548604 /* Pods-HelloFresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFresh/Pods-HelloFresh.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,22 +279,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6939870B1F600861004BAEE7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73E7FDDA85EBD4E3F9B22C64 /* Pods_HelloFreshTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		693987161F600861004BAEE7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0A402329C28CBE61C027854 /* Pods_HelloFreshUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -330,10 +287,6 @@
 			children = (
 				B58528EE86153D595F548604 /* Pods-HelloFresh.debug.xcconfig */,
 				5C7FDE1F0E33F93EF883E31B /* Pods-HelloFresh.release.xcconfig */,
-				79D3DF6BB336E872CC5D3849 /* Pods-HelloFreshTests.debug.xcconfig */,
-				3CAA98133111DC3CC54B1489 /* Pods-HelloFreshTests.release.xcconfig */,
-				1B4F8D9929CA1A18149F420E /* Pods-HelloFreshUITests.debug.xcconfig */,
-				6EEEAEDA584DBF3B4995C31C /* Pods-HelloFreshUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -358,8 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				693986FC1F600861004BAEE7 /* HelloFresh */,
-				693987111F600861004BAEE7 /* HelloFreshTests */,
-				6939871C1F600861004BAEE7 /* HelloFreshUITests */,
 				C26370CB3DE459FAB4D3A42D /* Frameworks */,
 				4E71BD09F33468A05DA9419B /* Pods */,
 				693986FB1F600861004BAEE7 /* Products */,
@@ -370,8 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				693986FA1F600861004BAEE7 /* HelloFresh.app */,
-				6939870E1F600861004BAEE7 /* HelloFreshTests.xctest */,
-				693987191F600861004BAEE7 /* HelloFreshUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,23 +335,6 @@
 				693987301F600882004BAEE7 /* Resources */,
 			);
 			path = HelloFresh;
-			sourceTree = "<group>";
-		};
-		693987111F600861004BAEE7 /* HelloFreshTests */ = {
-			isa = PBXGroup;
-			children = (
-				693987141F600861004BAEE7 /* Info.plist */,
-			);
-			path = HelloFreshTests;
-			sourceTree = "<group>";
-		};
-		6939871C1F600861004BAEE7 /* HelloFreshUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6939871D1F600861004BAEE7 /* HelloFreshUITests.swift */,
-				6939871F1F600861004BAEE7 /* Info.plist */,
-			);
-			path = HelloFreshUITests;
 			sourceTree = "<group>";
 		};
 		6939872B1F600869004BAEE7 /* Common */ = {
@@ -507,7 +439,7 @@
 		693987551F600E86004BAEE7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				693987531F600E59004BAEE7 /* NavigationConstants.swift */,
+				693987531F600E59004BAEE7 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -610,6 +542,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		696168B9229A575400B48F08 /* RecipeUser */ = {
+			isa = PBXGroup;
+			children = (
+				696168BA229A576500B48F08 /* ManagedRecipeUser.swift */,
+				696168BC229A57D800B48F08 /* ManagedRecipeUser+CoreDataProperties.swift */,
+			);
+			path = RecipeUser;
+			sourceTree = "<group>";
+		};
 		69A9B8551F6E95780040BC66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +608,7 @@
 		69D077471F652E34000F995E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				696168B9229A575400B48F08 /* RecipeUser */,
 				69E0964E1F6EB83800D428C2 /* Recipe */,
 				69D0774C1F652EB9000F995E /* User */,
 			);
@@ -882,8 +824,6 @@
 			isa = PBXGroup;
 			children = (
 				92FA55F19CD4558654912459 /* Pods_HelloFresh.framework */,
-				1FADC35528FD3E17695CBF8D /* Pods_HelloFreshTests.framework */,
-				023D51BEB883FDC0042C97FC /* Pods_HelloFreshUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -910,46 +850,6 @@
 			productReference = 693986FA1F600861004BAEE7 /* HelloFresh.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6939870D1F600861004BAEE7 /* HelloFreshTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 693987251F600861004BAEE7 /* Build configuration list for PBXNativeTarget "HelloFreshTests" */;
-			buildPhases = (
-				71EF60DDD1D79F5B659685B7 /* [CP] Check Pods Manifest.lock */,
-				6939870A1F600861004BAEE7 /* Sources */,
-				6939870B1F600861004BAEE7 /* Frameworks */,
-				6939870C1F600861004BAEE7 /* Resources */,
-				EED38518777EA1295856D885 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				693987101F600861004BAEE7 /* PBXTargetDependency */,
-			);
-			name = HelloFreshTests;
-			productName = HelloFreshTests;
-			productReference = 6939870E1F600861004BAEE7 /* HelloFreshTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		693987181F600861004BAEE7 /* HelloFreshUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 693987281F600861004BAEE7 /* Build configuration list for PBXNativeTarget "HelloFreshUITests" */;
-			buildPhases = (
-				71CCAC4496778E71E52BB33C /* [CP] Check Pods Manifest.lock */,
-				693987151F600861004BAEE7 /* Sources */,
-				693987161F600861004BAEE7 /* Frameworks */,
-				693987171F600861004BAEE7 /* Resources */,
-				B08AD900F019659502F9F842 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6939871B1F600861004BAEE7 /* PBXTargetDependency */,
-			);
-			name = HelloFreshUITests;
-			productName = HelloFreshUITests;
-			productReference = 693987191F600861004BAEE7 /* HelloFreshUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -963,22 +863,8 @@
 					693986F91F600861004BAEE7 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4Y8HF4E9A7;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
-					};
-					6939870D1F600861004BAEE7 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y8HF4E9A7;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 693986F91F600861004BAEE7;
-					};
-					693987181F600861004BAEE7 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y8HF4E9A7;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 693986F91F600861004BAEE7;
 					};
 				};
 			};
@@ -996,8 +882,6 @@
 			projectRoot = "";
 			targets = (
 				693986F91F600861004BAEE7 /* HelloFresh */,
-				6939870D1F600861004BAEE7 /* HelloFreshTests */,
-				693987181F600861004BAEE7 /* HelloFreshUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1039,87 +923,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6939870C1F600861004BAEE7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		693987171F600861004BAEE7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		71CCAC4496778E71E52BB33C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HelloFreshUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71EF60DDD1D79F5B659685B7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HelloFreshTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B08AD900F019659502F9F842 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HelloFreshUITests/Pods-HelloFreshUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AHKNavigationController/AHKNavigationController.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AHKNavigationController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloFreshUITests/Pods-HelloFreshUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D206654268A2F5AF13817411 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1174,38 +980,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloFresh/Pods-HelloFresh-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EED38518777EA1295856D885 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HelloFreshTests/Pods-HelloFreshTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AHKNavigationController/AHKNavigationController.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AHKNavigationController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloFreshTests/Pods-HelloFreshTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1229,7 +1003,7 @@
 				69E096A81F6F589C00D428C2 /* RecipeDetailsBodyCell.swift in Sources */,
 				693987921F60177F004BAEE7 /* WeeklyMenuWireframe.swift in Sources */,
 				6939874F1F600E18004BAEE7 /* InteractorInterface.swift in Sources */,
-				693987541F600E59004BAEE7 /* NavigationConstants.swift in Sources */,
+				693987541F600E59004BAEE7 /* Constants.swift in Sources */,
 				69D077881F65CEDC000F995E /* LoginInteractor.swift in Sources */,
 				693987861F601756004BAEE7 /* ExploreRecipesViewController.swift in Sources */,
 				69FFF96F1F6D7AAD002E0DD2 /* UIFontExtensions.swift in Sources */,
@@ -1267,6 +1041,7 @@
 				69E096521F6EB86100D428C2 /* ManagedRecipe+CoreDataProperties.swift in Sources */,
 				69E0965B1F6EBCB600D428C2 /* RecipeDetailsViewController.swift in Sources */,
 				693987851F601756004BAEE7 /* ExploreRecipesPresenter.swift in Sources */,
+				696168BB229A576500B48F08 /* ManagedRecipeUser.swift in Sources */,
 				6939878E1F60177F004BAEE7 /* WeeklyMenuInteractor.swift in Sources */,
 				693986FE1F600861004BAEE7 /* AppDelegate.swift in Sources */,
 				69D0774F1F652EFD000F995E /* User.swift in Sources */,
@@ -1287,6 +1062,7 @@
 				69D077801F65CEC8000F995E /* OnboardPresenter.swift in Sources */,
 				69D077551F653030000F995E /* CoreDataPersistenceProtocol.swift in Sources */,
 				693987721F6012F3004BAEE7 /* KeyboardObservable.swift in Sources */,
+				696168BD229A57D800B48F08 /* ManagedRecipeUser+CoreDataProperties.swift in Sources */,
 				69E096A51F6F589C00D428C2 /* RecipeDetailsHeaderCell.swift in Sources */,
 				69D0777F1F65CEC8000F995E /* OnboardInterfaces.swift in Sources */,
 				6939877B1F60141C004BAEE7 /* StringExtensions.swift in Sources */,
@@ -1311,35 +1087,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6939870A1F600861004BAEE7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		693987151F600861004BAEE7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6939871E1F600861004BAEE7 /* HelloFreshUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		693987101F600861004BAEE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 693986F91F600861004BAEE7 /* HelloFresh */;
-			targetProxy = 6939870F1F600861004BAEE7 /* PBXContainerItemProxy */;
-		};
-		6939871B1F600861004BAEE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 693986F91F600861004BAEE7 /* HelloFresh */;
-			targetProxy = 6939871A1F600861004BAEE7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		693987201F600861004BAEE7 /* Debug */ = {
@@ -1466,8 +1214,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1480,74 +1227,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		693987261F600861004BAEE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79D3DF6BB336E872CC5D3849 /* Pods-HelloFreshTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = HelloFreshTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFreshTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloFresh.app/HelloFresh";
-			};
-			name = Debug;
-		};
-		693987271F600861004BAEE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CAA98133111DC3CC54B1489 /* Pods-HelloFreshTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = HelloFreshTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFreshTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloFresh.app/HelloFresh";
-			};
-			name = Release;
-		};
-		693987291F600861004BAEE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B4F8D9929CA1A18149F420E /* Pods-HelloFreshUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = HelloFreshUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFreshUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = HelloFresh;
-			};
-			name = Debug;
-		};
-		6939872A1F600861004BAEE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EEEAEDA584DBF3B4995C31C /* Pods-HelloFreshUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = HelloFreshUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFreshUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = HelloFresh;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1568,24 +1248,6 @@
 			buildConfigurations = (
 				693987231F600861004BAEE7 /* Debug */,
 				693987241F600861004BAEE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		693987251F600861004BAEE7 /* Build configuration list for PBXNativeTarget "HelloFreshTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				693987261F600861004BAEE7 /* Debug */,
-				693987271F600861004BAEE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		693987281F600861004BAEE7 /* Build configuration list for PBXNativeTarget "HelloFreshUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				693987291F600861004BAEE7 /* Debug */,
-				6939872A1F600861004BAEE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

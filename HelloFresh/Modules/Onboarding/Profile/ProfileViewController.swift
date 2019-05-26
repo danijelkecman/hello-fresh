@@ -54,7 +54,7 @@ extension ProfileViewController: TabBarItemConfigurable {
     }
     
     func configureTabBarItem() {
-        let fontAttributes = [NSAttributedStringKey.font: UIFont.tabLabelFont()]
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.tabLabelFont()]
         
         tabBarItem.title = tabBarItemTitle()
         tabBarItem.image = UIImage(named: tabBarItemImageName(active: false))

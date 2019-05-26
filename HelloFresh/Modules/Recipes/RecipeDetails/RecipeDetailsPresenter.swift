@@ -11,53 +11,56 @@
 import UIKit
 
 final class RecipeDetailsPresenter {
-
-    // MARK: - Private properties -
-
-    fileprivate weak var _view: RecipeDetailsViewInterface?
-    fileprivate var _interactor: RecipeDetailsInteractorInterface
-    fileprivate var _wireframe: RecipeDetailsWireframeInterface
+  
+  // MARK: - Private properties -
+  
+  fileprivate weak var _view: RecipeDetailsViewInterface?
+  fileprivate var _interactor: RecipeDetailsInteractorInterface
+  fileprivate var _wireframe: RecipeDetailsWireframeInterface
+  
+  fileprivate var _service: HelloFreshService!
+  fileprivate var _recipe: Recipe!
+  
+  // MARK: - Lifecycle -
+  
+  init(wireframe: RecipeDetailsWireframeInterface,
+       view: RecipeDetailsViewInterface,
+       interactor: RecipeDetailsInteractorInterface,
+       recipeId: String) {
+    _wireframe = wireframe
+    _view = view
+    _interactor = interactor
     
-    fileprivate var _service: HelloFreshService!
-    fileprivate var _recipeDto: RecipeDto!
-
-    // MARK: - Lifecycle -
-
-    init(wireframe: RecipeDetailsWireframeInterface,
-         view: RecipeDetailsViewInterface,
-         interactor: RecipeDetailsInteractorInterface,
-         recipeDto: RecipeDto) {
-        _wireframe = wireframe
-        _view = view
-        _interactor = interactor
-        
-        // injected otherwise
-        _service = HelloFreshService(helloFreshPersistence: HelloFreshDataStore())
-        _recipeDto = recipeDto
+    // injected otherwise
+    _service = HelloFreshService(helloFreshPersistence: HelloFreshDataStore())
+    _service.fetchRecipe(recipeId) { recipe in
+      self._recipe = recipe
     }
-    
-    func viewDidLoad() {
-        log.info(_recipeDto)
-    }
+  }
+  
+  func viewDidLoad() {
+    log.info(_recipe ?? "")
+  }
 }
 
 // MARK: - Extensions -
 
 extension RecipeDetailsPresenter: RecipeDetailsPresenterInterface {
-    
-    func didChangeRatingFor(with rating: Int) {
-        _recipeDto.rating = rating
-        _service.updateRecipe(Recipe.createRecipeFrom(recipeDto: _recipeDto)) {
-            log.info("updated rating")
-        }
+  
+  func didChangeRatingFor(with rating: Float) {
+    _recipe.rating = Float(rating)
+    _service.updateRecipe(_recipe) {
+      log.info("updated rating")
     }
-    func updateRecipe(with recipeDto: RecipeDto) {
-        _service.updateRecipe(Recipe.createRecipeFrom(recipeDto: recipeDto)) {
-            self._recipeDto = recipeDto
-        }
+  }
+  func updateRecipe(with recipe: Recipe) {
+    _service.updateRecipe(recipe) {
+      self._recipe = recipe
     }
-    
-    func getRecipeDto() -> RecipeDto {
-        return _recipeDto
-    }
+  }
+  
+  func getRecipe() -> Recipe {
+    return _recipe
+  }
 }
+

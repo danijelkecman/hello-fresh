@@ -25,7 +25,7 @@ final class AppearanceInitializer: Initializable {
         UINavigationBar.appearance().isTranslucent = false
         
         let font = UIFont.systemFont(ofSize: 17)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: font]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: font]
     }
 }
 

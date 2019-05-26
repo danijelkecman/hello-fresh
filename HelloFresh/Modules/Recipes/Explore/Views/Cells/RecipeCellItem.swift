@@ -9,14 +9,14 @@
 import UIKit
 
 struct RecipeCellItem {
-    let recipeId: String
-    let name: String
-    let thumbnailUrl: String
-    let imageUrl: String
-    let calories: String
-    let headline: String
-    let time: String
-    var rating: Int?
+    var recipeId: String
+    var name: String
+    var thumbnailUrl: String
+    var imageUrl: String
+    var calories: String
+    var headline: String
+    var time: String
+    var rating: Float?
     var isFavourite: Bool
     var isFavouriteSet: Bool
     var image: UIImage? = nil
@@ -28,17 +28,18 @@ extension RecipeCellItem {
         self.image = image
     }
     
-    static func getItemFrom(recipeDto recipe: RecipeDto, isFavourite: Bool, isFavouriteSet: Bool) -> RecipeCellItem {
-        return RecipeCellItem(recipeId: recipe.id,
+    static func getItemFrom(recipe: Recipe, isFavourite: Bool, isFavouriteSet: Bool) -> RecipeCellItem {
+        return RecipeCellItem(recipeId: recipe.recipeId,
                               name: recipe.name ?? "Delicious",
                               thumbnailUrl: recipe.thumb,
                               imageUrl: recipe.image,
                               calories: recipe.calories,
                               headline: recipe.headline,
                               time: recipe.time,
-                              rating: recipe.rating,
+                              rating: recipe.rating ?? 0,
                               isFavourite: isFavourite,
-                              isFavouriteSet: isFavouriteSet, image: nil)
+                              isFavouriteSet: isFavouriteSet,
+                              image: nil)
     }
     
 }

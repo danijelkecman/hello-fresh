@@ -22,7 +22,7 @@ protocol WireframeInterface: class {
     func dismiss(_ animated: Bool)
     func showActivity(withItems items: [Any],
                       andActivities activities: [UIActivity]?,
-                      handler: @escaping (UIActivityType?, Bool, [Any]?, Error?) -> Swift.Void)
+                      handler: @escaping (UIActivity.ActivityType?, Bool, [Any]?, Error?) -> Swift.Void)
     
     func open(_ url: String)
     func open(_ url: URL)
@@ -69,7 +69,7 @@ extension BaseWireframe: WireframeInterface {
     
     func showActivity(withItems items: [Any],
                       andActivities activities: [UIActivity]?,
-                      handler: @escaping (UIActivityType?, Bool, [Any]?, Error?) -> Swift.Void) {
+                      handler: @escaping (UIActivity.ActivityType?, Bool, [Any]?, Error?) -> Swift.Void) {
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: activities)
         activityViewController.completionWithItemsHandler = handler
         self.navigationController.present(activityViewController, animated: true, completion: nil)
@@ -87,7 +87,7 @@ extension BaseWireframe: WireframeInterface {
 
     func open(_ url: URL) {
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
@@ -96,4 +96,9 @@ extension BaseWireframe: WireframeInterface {
     func popToRoot(animated: Bool = true) {
         navigationController.popToRootViewController(animated: animated)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

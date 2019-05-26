@@ -11,7 +11,7 @@ import AlamofireImage
 
 protocol RecipeCellFavouriteProtocol: class {
     func didSelectFavouriteWith(recipeId: String, isFavourite: Bool)
-    func didChangeRatingFor(recipeId: String, with rating: Int)
+    func didChangeRatingFor(recipeId: String, with rating: Float)
 }
 
 class RecipeCell: UITableViewCell, NibReusable, RatingControlProtocol {
@@ -97,7 +97,7 @@ class RecipeCell: UITableViewCell, NibReusable, RatingControlProtocol {
     
     // Rating Delegate
     
-    func didChangeRatingWith(stars: Int) {
+    func didChangeRatingWith(stars: Float) {
         favouriteDelegate?.didChangeRatingFor(recipeId: item.recipeId, with: stars)
     }
 }

@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 
 protocol RecipeDetailsHeaderProtocol: class {
-    func favouriteTapped(recipeDto: RecipeDto)
+    func favouriteTapped(recipe: Recipe)
 }
 
 class RecipeDetailsHeaderCell: UITableViewCell, NibReusable {
@@ -23,13 +23,13 @@ class RecipeDetailsHeaderCell: UITableViewCell, NibReusable {
     
     weak var recipeDetailsDelegate: RecipeDetailsHeaderProtocol?
     
-    var recipeDto: RecipeDto!
+    var recipe: Recipe!
     
-    func configure(with recipeDto: RecipeDto) {
-        self.recipeDto = recipeDto
-        setupRecipeName(recipeDto)
-        setupIngredients(recipeDto)
-        setupHeaderImage(recipeDto.thumb)
+    func configure(with recipe: Recipe) {
+        self.recipe = recipe
+        setupRecipeName(recipe)
+        setupIngredients(recipe)
+        setupHeaderImage(recipe.thumb)
         setupFavoriteStatus()
     }
     
@@ -38,7 +38,7 @@ class RecipeDetailsHeaderCell: UITableViewCell, NibReusable {
         let imageNumber = arc4random_uniform(10)
         let placeholderImage = UIImage(named: String(imageNumber))
         
-        headerImageView.af_setImage(withURL: URL(string: recipeDto.image)!, placeholderImage: placeholderImage) { [weak self] (response) in
+        headerImageView.af_setImage(withURL: URL(string: recipe.image)!, placeholderImage: placeholderImage) { [weak self] (response) in
             switch response.result {
             case .success(let image):
                 self?.headerImageView.image = image
@@ -76,46 +76,46 @@ class RecipeDetailsHeaderCell: UITableViewCell, NibReusable {
     
     // setup icon of the favorite status button
     fileprivate func setupFavoriteStatus() {
-        if recipeDto.isFavourite {
-            likeButton.setImage(UIImage(named: "icFavoritesOrange"), for: UIControlState())
+        if recipe.isFavourite {
+            likeButton.setImage(UIImage(named: "icFavoritesOrange"), for: UIControl.State())
             likeButton.imageView?.image = UIImage(named: "icFavoritesOrange")
         } else {
-            likeButton.setImage(UIImage(named: "icFavorite"), for: UIControlState())
+            likeButton.setImage(UIImage(named: "icFavorite"), for: UIControl.State())
         }
     }
     
     // setup recipe name
-    fileprivate func setupRecipeName(_ recipe: RecipeDto) {
+    fileprivate func setupRecipeName(_ recipe: Recipe) {
         let recipeName = recipe.name
         var mutableString = NSMutableAttributedString()
         let font = UIFont(name: "Gill Sans", size: 18.0)!
-        mutableString = NSMutableAttributedString(string: recipeName!, attributes: [NSAttributedStringKey.font:font])
+        mutableString = NSMutableAttributedString(string: recipeName!, attributes: [NSAttributedString.Key.font:font])
         
         self.recipeNameLabel.attributedText = mutableString
     }
     
     // setup ingredients
-    fileprivate func setupIngredients(_ recipe: RecipeDto) {
+    fileprivate func setupIngredients(_ recipe: Recipe) {
         let recipeIngredients =
                             "Nutrition\nCalories: \(recipe.calories), Carbohydrate: \(recipe.carbos), " +
                             "Dietary Fiber: \(recipe.fibers), Fat: \(recipe.fats), Protein: \(recipe.proteins)"
         var mutableString = NSMutableAttributedString()
         let font = UIFont(name: "Gill Sans", size: 14.0)!
-        mutableString = NSMutableAttributedString(string: recipeIngredients, attributes: [NSAttributedStringKey.font:font])
+        mutableString = NSMutableAttributedString(string: recipeIngredients, attributes: [NSAttributedString.Key.font:font])
         self.recipeIngredientsLabel.attributedText = mutableString
     }
     
     
     // like button tapped this will change the image and store the new status in the db for this recipe
     @IBAction func likeButtonTapped(_ sender: UIButton) {
-        if recipeDto.isFavourite {
-            likeButton.setImage(UIImage(named: "icFavoritesOrange"), for: UIControlState())
-            recipeDto.isFavourite = !recipeDto.isFavourite
-            recipeDetailsDelegate?.favouriteTapped(recipeDto: recipeDto)
+        if recipe.isFavourite {
+            likeButton.setImage(UIImage(named: "icFavoritesOrange"), for: UIControl.State())
+            recipe.isFavourite = !recipe.isFavourite
+            recipeDetailsDelegate?.favouriteTapped(recipe: recipe)
         } else {
-            likeButton.setImage(UIImage(named: "icFavorite"), for: UIControlState())
-            recipeDto.isFavourite = !recipeDto.isFavourite
-            recipeDetailsDelegate?.favouriteTapped(recipeDto: recipeDto)
+            likeButton.setImage(UIImage(named: "icFavorite"), for: UIControl.State())
+            recipe.isFavourite = !recipe.isFavourite
+            recipeDetailsDelegate?.favouriteTapped(recipe: recipe)
         }
     }
     

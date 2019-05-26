@@ -7,8 +7,6 @@
 //
 
 import Alamofire
-import Result
-import enum Result.Result
 
 final class ExploreRecipesInteractor {
 }
@@ -16,8 +14,8 @@ final class ExploreRecipesInteractor {
 // MARK: - Extensions -
 
 extension ExploreRecipesInteractor: ExploreRecipesInteractorInterface {
-    func getRecipes(completion: @escaping ((Result<[RecipeDto], NetworkError>, DataResponse<Any>) -> Void)) {
-        Alamofire.request(Router.recipes).responseArray { (result: Result<[RecipeDto], NetworkError>, response: DataResponse<Any>) in
+    func getRecipes(completion: @escaping ((Result<[RecipeDto]>, DataResponse<Any>) -> Void)) {
+        Alamofire.request(Router.recipes).responseArray { (result: Result<[RecipeDto]>, response: DataResponse<Any>) in
             completion(result, response)
         }
     }

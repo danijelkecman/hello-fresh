@@ -72,9 +72,9 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
             case .success(let recipesDtos):
                 self?.recipesDtos = recipesDtos
                 for recipeDto in recipesDtos {
-                    self?._service.createRecipe(Recipe.createRecipeFrom(recipeDto: recipeDto), completionHandler: {
+                    self?._service.createRecipe(Recipe.createRecipeFrom(recipeDto: recipeDto)) {
                         print("created frecipe: \(recipeDto)")
-                    })
+                    }
                     self?.recipeItems.append(RecipeCellItem.getItemFrom(recipeDto: recipeDto,
                                                                         isFavourite: false,
                                                                         isFavouriteSet: false))
@@ -110,10 +110,10 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
             var recipeToUpdate = recipe!
             recipeToUpdate.isFavourite = isFavourite
             recipeToUpdate.isFavouriteSet = true
-            self?._service.updateRecipe(recipeToUpdate, completionHandler: {
+            self?._service.updateRecipe(recipeToUpdate) {
                 log.info("update success")
                 self?.updateRecipeItemWith(recipe: recipeToUpdate)
-            })
+            }
         }
     }
     
@@ -124,10 +124,10 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
             guard let _ = recipe else { return }
             var recipeToUpdate = recipe!
             recipeToUpdate.rating = rating
-            self?._service.updateRecipe(recipeToUpdate, completionHandler: {
+            self?._service.updateRecipe(recipeToUpdate) {
                 log.info("update success")
                 self?.updateRecipeItemWith(recipe: recipeToUpdate)
-            })
+            }
         }
     }
     

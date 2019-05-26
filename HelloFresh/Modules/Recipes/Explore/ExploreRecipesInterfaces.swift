@@ -7,8 +7,6 @@
 //
 
 import Alamofire
-import Result
-import enum Result.Result
 
 enum ExploreRecipesNavigationOption {
     case recipeDetails(recipeDto: RecipeDto)
@@ -39,5 +37,5 @@ protocol ExploreRecipesPresenterInterface: PresenterInterface {
 }
 
 protocol ExploreRecipesInteractorInterface: InteractorInterface {
-    func getRecipes(completion: @escaping ((Result<[RecipeDto], NetworkError>, DataResponse<Any>) -> Void))
+    func getRecipes(completion: @escaping ((Result<[RecipeDto]>, DataResponse<Any>) -> Void))
 }

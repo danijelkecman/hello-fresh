@@ -7,39 +7,21 @@
 //
 
 import Alamofire
-import Unbox
-import Result
-import enum Result.Result
 
 enum NetworkError: Error {
-    case General
-    case Alamofire(AFError)
-    case Unbox(UnboxError)
-    
-    var message: String {
-        switch self {
-        case .General:
-            return "General error"
-        case .Alamofire(let error):
-            return "Alamofire error: \(error.localizedDescription)"
-        case .Unbox(let error):
-            return "Unbox error: \(error.description)"
-        }
+  case General
+  case Decoding(Error)
+  case Alamofire(AFError)
+  
+  var message: String {
+    switch self {
+    case .General:
+      return "General error"
+    case .Decoding(let error):
+      return "Decoding error: \(error.localizedDescription)"
+    case .Alamofire(let error):
+      return "Alamofire error: \(error.localizedDescription)"
     }
+  }
 }
 
-extension NetworkError: ErrorConvertible {
-    static func error(from error: Swift.Error) -> NetworkError {
-        if error is UnboxError {
-            return NetworkError.Unbox(error as! UnboxError)
-        } else {
-            return NetworkError.Alamofire(error as! AFError)
-        }
-    }
-}
-
-extension UnboxError: ErrorConvertible {
-    public static func error(from error: Swift.Error) -> UnboxError {
-        return error as! UnboxError
-    }
-}

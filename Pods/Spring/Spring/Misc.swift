@@ -23,7 +23,7 @@
 import UIKit
 
 public extension String {
-    public var length: Int { return self.characters.count }
+    public var length: Int { return self.count }
     
     public func toURL() -> NSURL? {
         return NSURL(string: self)
@@ -31,10 +31,11 @@ public extension String {
 }
 
 public func htmlToAttributedString(text: String) -> NSAttributedString! {
-    let htmlData = text.data(using: String.Encoding.utf8, allowLossyConversion: false)
+    guard let htmlData = text.data(using: String.Encoding.utf8, allowLossyConversion: false) else {
+        return NSAttributedString() }
     let htmlString: NSAttributedString?
     do {
-        htmlString = try NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+        htmlString = try NSAttributedString(data: htmlData, options: [NSAttributedString.DocumentReadingOptionKey.documentType:NSAttributedString.DocumentType.html], documentAttributes: nil)
     } catch _ {
         htmlString = nil
     }
@@ -66,13 +67,13 @@ public extension UIColor {
         
         if hex.hasPrefix("#") {
             let index = hex.index(hex.startIndex, offsetBy: 1)
-            hex         = hex.substring(from: index)
+            hex = String(hex[index...])
         }
         
         let scanner = Scanner(string: hex)
         var hexValue: CUnsignedLongLong = 0
         if scanner.scanHexInt64(&hexValue) {
-            switch (hex.characters.count) {
+            switch (hex.count) {
             case 3:
                 red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                 green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0
@@ -234,7 +235,7 @@ public func timeAgoSinceDate(date: Date, numericDates: Bool) -> String {
 }
 
 extension UIImageView {
-    func setImage(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, placeholderImage: UIImage?) {
+    func setImage(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit, placeholderImage: UIImage?) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
@@ -252,7 +253,7 @@ extension UIImageView {
             }
             }.resume()
     }
-    func setImage(urlString: String, contentMode mode: UIViewContentMode = .scaleAspectFit, placeholderImage: UIImage?) {
+    func setImage(urlString: String, contentMode mode: UIView.ContentMode = .scaleAspectFit, placeholderImage: UIImage?) {
         guard let url = URL(string: urlString) else {
             image = placeholderImage
             return

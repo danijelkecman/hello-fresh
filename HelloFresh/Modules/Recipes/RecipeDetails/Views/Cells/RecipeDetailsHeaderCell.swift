@@ -109,7 +109,7 @@ class RecipeDetailsHeaderCell: UITableViewCell, NibReusable {
   
   // like button tapped this will change the image and store the new status in the db for this recipe
   @IBAction func likeButtonTapped(_ sender: UIButton) {
-    if recipe.isFavourite {
+    if !recipe.isFavourite {
       likeButton.setImage(UIImage(named: "icFavoritesOrange"), for: UIControl.State())
       recipe.isFavourite = !recipe.isFavourite
       recipeDetailsDelegate?.favouriteTapped(recipe: recipe)

@@ -2,7 +2,7 @@
 //  ExploreRecipesViewController.swift
 //  HelloFresh
 //
-//  Created by Danijel Kecman on 9/6/17.
+//  Created by Danijel Kecman on 25/5/19.
 //  Copyright (c) 2017 Danijel Kecman. All rights reserved.
 //
 
@@ -33,7 +33,7 @@ final class ExploreRecipesViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     if recipesUpdated {
-      tableView.reloadData()
+      presenter.getStoredRecipes()
       recipesUpdated = false
     }
   }
@@ -50,7 +50,7 @@ final class ExploreRecipesViewController: UIViewController {
     
     _setupRecipesTableUI()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(refreshDataFromDataSource),
+    NotificationCenter.default.addObserver(self, selector: #selector(recipeUpdatedOnDetailsScreen),
                                            name: Notification.Name(rawValue: Constants.NotificationConstants.recipeUpdated),
                                            object: nil)
   }
@@ -64,19 +64,9 @@ final class ExploreRecipesViewController: UIViewController {
   }
   
   @objc
-  func refreshDataFromDataSource() {
-    presenter.viewDidLoad()
+  func recipeUpdatedOnDetailsScreen() {
+    recipesUpdated = true
   }
-}
-
-// MARK: - Notifications
-
-extension ExploreRecipesViewController {
-  
-  func recipeDidChanged() {
-    tableView.reloadData()
-  }
-  
 }
 
 // MARK: - Extensions -

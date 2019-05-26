@@ -2,7 +2,7 @@
 //  ExploreRecipesPresenter.swift
 //  HelloFresh
 //
-//  Created by Danijel Kecman on 9/6/17.
+//  Created by Danijel Kecman on 25/5/19.
 //  Copyright (c) 2017 Danijel Kecman. All rights reserved.
 //
 
@@ -73,9 +73,7 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
           print("created recipes")
         }
         for recipe in recipes {
-          self?.recipeItems.append(RecipeCellItem.getItemFrom(recipe: recipe,
-                                                              isFavourite: false,
-                                                              isFavouriteSet: false))
+          self?.recipeItems.append(RecipeCellItem.getItemFrom(recipe: recipe, isFavourite: false))
         }
         DispatchQueue.main.async {
           self?._view?.reloadTable()
@@ -89,8 +87,14 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
   // Storage
   
   func getStoredRecipes() {
-    _service.fetchRecipes { recipes in
-      log.info(recipes.count)
+    recipeItems.removeAll()
+    _service.fetchRecipes { [weak self] recipes in
+      for recipe in recipes {
+        self?.recipeItems.append(RecipeCellItem.getItemFrom(recipe: recipe, isFavourite: recipe.isFavourite))
+      }
+      DispatchQueue.main.async {
+        self?._view?.reloadTable()
+      }
     }
   }
   
@@ -104,12 +108,11 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
   
   func didSelectFavouriteWith(recipeId: String, isFavourite: Bool) {
     _service.fetchRecipe(recipeId) { [weak self] (recipe) in
-      guard let _ = recipe else { return }
-      var recipeToUpdate = recipe!
-      recipeToUpdate.isFavourite = isFavourite
-      self?._service.updateRecipe(recipeToUpdate) {
+      guard var recipe = recipe else { return }
+      recipe.isFavourite = isFavourite
+      self?._service.updateRecipe(recipe) {
         log.info("update success")
-        self?.updateRecipeItemWith(recipe: recipeToUpdate)
+        self?.updateRecipeItemWith(recipe: recipe)
       }
     }
   }

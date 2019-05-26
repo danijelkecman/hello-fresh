@@ -2,7 +2,7 @@
 //  RecipeCellItem.swift
 //  HelloFresh
 //
-//  Created by Danijel Kecman on 9/17/17.
+//  Created by Danijel Kecman on 26/5/19.
 //  Copyright © 2017 Danijel Kecman. All rights reserved.
 //
 
@@ -18,7 +18,6 @@ struct RecipeCellItem {
     var time: String
     var rating: Float?
     var isFavourite: Bool
-    var isFavouriteSet: Bool
     var image: UIImage? = nil
 }
 
@@ -28,7 +27,7 @@ extension RecipeCellItem {
         self.image = image
     }
     
-    static func getItemFrom(recipe: Recipe, isFavourite: Bool, isFavouriteSet: Bool) -> RecipeCellItem {
+    static func getItemFrom(recipe: Recipe, isFavourite: Bool) -> RecipeCellItem {
         return RecipeCellItem(recipeId: recipe.recipeId,
                               name: recipe.name ?? "Delicious",
                               thumbnailUrl: recipe.thumb,
@@ -38,7 +37,6 @@ extension RecipeCellItem {
                               time: recipe.time,
                               rating: recipe.rating ?? 0,
                               isFavourite: isFavourite,
-                              isFavouriteSet: isFavouriteSet,
                               image: nil)
     }
     

@@ -2,7 +2,7 @@
 //  BalanceButton.swift
 //  BTWallet
 //
-//  Created by Danijel Kecman on 9/8/17.
+//  Created by Danijel Kecman on 26/5/19.
 //  Copyright © 2017 Endava. All rights reserved.
 //
 

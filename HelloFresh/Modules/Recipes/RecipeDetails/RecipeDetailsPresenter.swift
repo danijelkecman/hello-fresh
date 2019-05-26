@@ -19,27 +19,35 @@ final class RecipeDetailsPresenter {
   fileprivate var _wireframe: RecipeDetailsWireframeInterface
   
   fileprivate var _service: HelloFreshService!
-  fileprivate var _recipe: Recipe!
+  fileprivate var _recipeId: String!
+  fileprivate var _recipe: Recipe?
   
   // MARK: - Lifecycle -
   
   init(wireframe: RecipeDetailsWireframeInterface,
        view: RecipeDetailsViewInterface,
        interactor: RecipeDetailsInteractorInterface,
+       service: HelloFreshService,
        recipeId: String) {
     _wireframe = wireframe
     _view = view
     _interactor = interactor
     
-    // injected otherwise
-    _service = HelloFreshService(helloFreshPersistence: HelloFreshDataStore())
-    _service.fetchRecipe(recipeId) { recipe in
-      self._recipe = recipe
-    }
+    _service = service
+    _recipeId = recipeId
   }
   
   func viewDidLoad() {
-    log.info(_recipe ?? "")
+    _service.fetchRecipe(_recipeId) { recipe in
+      self._recipe = recipe
+      self.reloadTableData()
+    }
+  }
+  
+  func reloadTableData() {
+    DispatchQueue.main.async {
+      self._view?.reloadData()
+    }
   }
 }
 
@@ -48,8 +56,9 @@ final class RecipeDetailsPresenter {
 extension RecipeDetailsPresenter: RecipeDetailsPresenterInterface {
   
   func didChangeRatingFor(with rating: Float) {
-    _recipe.rating = Float(rating)
-    _service.updateRecipe(_recipe) {
+    guard var recipe = _recipe else { return }
+    recipe.rating = Float(rating)
+    _service.updateRecipe(recipe) {
       log.info("updated rating")
     }
   }
@@ -59,7 +68,7 @@ extension RecipeDetailsPresenter: RecipeDetailsPresenterInterface {
     }
   }
   
-  func getRecipe() -> Recipe {
+  func getRecipe() -> Recipe? {
     return _recipe
   }
 }

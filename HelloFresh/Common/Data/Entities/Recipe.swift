@@ -44,7 +44,7 @@ struct Recipe {
 
 extension Recipe: Codable {
   enum CodingKeys: String, CodingKey {
-    case recipeId
+    case recipeId = "id"
     case calories
     case carbos
     case card

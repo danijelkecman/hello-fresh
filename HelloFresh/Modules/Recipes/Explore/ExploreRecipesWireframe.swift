@@ -32,9 +32,9 @@ final class ExploreRecipesWireframe: BaseWireframe {
     show(moduleViewController, with: transition, animated: animated)
   }
   
-  func _navigateToRecipeDetailsWith(recipeId: String) {
+  func _navigateToRecipeDetailsWith(service: HelloFreshService, recipeId: String) {
     let wireframe = RecipeDetailsWireframe(navigationController: self.navigationController)
-    wireframe.show(with: .push, recipeId: recipeId)
+    wireframe.show(with: .push, service: service, recipeId: recipeId)
   }
 }
 
@@ -44,8 +44,8 @@ extension ExploreRecipesWireframe: ExploreRecipesWireframeInterface {
   
   func navigate(to option: ExploreRecipesNavigationOption) {
     switch option {
-    case .recipeDetails(let recipeId):
-      _navigateToRecipeDetailsWith(recipeId: recipeId)
+    case .recipeDetails(let service, let recipeId):
+      _navigateToRecipeDetailsWith(service: service, recipeId: recipeId)
     }
   }
 }

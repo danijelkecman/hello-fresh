@@ -6,30 +6,30 @@
         <attribute name="card" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currentRating" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="deliverableIngredients" optional="YES" attributeType="Transformable" valueTransformerName="[String]" syncable="YES"/>
+        <attribute name="deliverableIngredients" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName=".[String]" syncable="YES"/>
         <attribute name="difficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fats" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="favorites" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorites" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fibers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="highlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="incompatibilities" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]" syncable="YES"/>
-        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="keywords" optional="YES" attributeType="Transformable" customClassName="[Strig]" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName=".[String]" syncable="YES"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keywords" optional="YES" attributeType="Transformable" customClassName=".[String]" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="products" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="products" optional="YES" attributeType="Transformable" customClassName=".[String]" syncable="YES"/>
         <attribute name="proteins" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ratings" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="recipeDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeUser" optional="YES" attributeType="Transformable" customClassName=".RecipeUser" syncable="YES"/>
         <attribute name="thumb" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="undeliverableIngredients" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
-        <attribute name="user" optional="YES" attributeType="Transformable" customClassName="RecipeUser" syncable="YES"/>
-        <attribute name="weeks" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="undeliverableIngredients" optional="YES" attributeType="Transformable" customClassName=".[String]" syncable="YES"/>
+        <attribute name="weeks" optional="YES" attributeType="Transformable" customClassName=".[String]" syncable="YES"/>
     </entity>
     <entity name="ManagedRecipeUser" representedClassName=".ManagedRecipeUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>

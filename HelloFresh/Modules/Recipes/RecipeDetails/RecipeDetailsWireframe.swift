@@ -11,33 +11,38 @@
 import UIKit
 
 final class RecipeDetailsWireframe: BaseWireframe {
-
-    // MARK: - Private properties -
-
-    private let _storyboard = AppStoryboard.Recipes.instance
-
-    // MARK: - Module setup -
-
-    func configureModule(with viewController: RecipeDetailsViewController, recipeId: String) {
-        let interactor = RecipeDetailsInteractor()
-        let presenter = RecipeDetailsPresenter(wireframe: self, view: viewController, interactor: interactor, recipeId: recipeId)
-        viewController.presenter = presenter
-    }
-
-    // MARK: - Transitions -
-
-    func show(with transition: Transition, animated: Bool = true, recipeId: String) {
-        let moduleViewController = RecipeDetailsViewController.instantiateFrom(appStoryboard: .Recipes)
-        configureModule(with: moduleViewController, recipeId: recipeId)
-
-        show(moduleViewController, with: transition, animated: animated)
-    }
+  
+  // MARK: - Private properties -
+  
+  private let _storyboard = AppStoryboard.Recipes.instance
+  
+  // MARK: - Module setup -
+  
+  func configureModule(with viewController: RecipeDetailsViewController, service: HelloFreshService, recipeId: String) {
+    let interactor = RecipeDetailsInteractor()
+    let presenter = RecipeDetailsPresenter(wireframe: self,
+                                           view: viewController,
+                                           interactor: interactor,
+                                           service: service,
+                                           recipeId: recipeId)
+    viewController.presenter = presenter
+  }
+  
+  // MARK: - Transitions -
+  
+  func show(with transition: Transition, animated: Bool = true, service: HelloFreshService, recipeId: String) {
+    let moduleViewController = RecipeDetailsViewController.instantiateFrom(appStoryboard: .Recipes)
+    configureModule(with: moduleViewController, service: service, recipeId: recipeId)
+    
+    show(moduleViewController, with: transition, animated: animated)
+  }
 }
 
 // MARK: - Extensions -
 
 extension RecipeDetailsWireframe: RecipeDetailsWireframeInterface {
-
-    func navigate(to option: RecipeDetailsNavigationOption) {
-    }
+  
+  func navigate(to option: RecipeDetailsNavigationOption) {
+  }
 }
+

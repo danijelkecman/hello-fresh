@@ -54,7 +54,7 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
   }
   
   func didSelectItemAt(indexPath: IndexPath) {
-    _wireframe.navigate(to: .recipeDetails(recipeId: recipeItems[indexPath.row].recipeId))
+    _wireframe.navigate(to: .recipeDetails(service: _service, recipeId: recipeItems[indexPath.row].recipeId))
   }
   
   func setItemImage(_ image: UIImage, at row: Int) {

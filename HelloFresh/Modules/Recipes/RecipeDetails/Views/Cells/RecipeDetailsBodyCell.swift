@@ -9,15 +9,17 @@
 import UIKit
 
 class RecipeDetailsBodyCell: UITableViewCell, NibReusable {
-
-    @IBOutlet weak var recipeBody: UILabel!
-    
-    func configure(with recipe: Recipe) {
-        let recipeDetails = "Did you know?\n\(recipe.description)"
-        var mutableString = NSMutableAttributedString()
-        let font = UIFont(name: "Gill Sans", size: 14.0)!
-        mutableString = NSMutableAttributedString(string: recipeDetails, attributes: [NSAttributedString.Key.font:font])
-        self.recipeBody.attributedText = mutableString
-    }
-
+  
+  @IBOutlet weak var recipeBody: UILabel!
+  
+  func configure(with recipe: Recipe?) {
+    guard let recipe = recipe else { return }
+    let recipeDetails = "Did you know?\n\(recipe.description)"
+    var mutableString = NSMutableAttributedString()
+    let font = UIFont(name: "Gill Sans", size: 14.0)!
+    mutableString = NSMutableAttributedString(string: recipeDetails, attributes: [NSAttributedString.Key.font:font])
+    self.recipeBody.attributedText = mutableString
+  }
+  
 }
+

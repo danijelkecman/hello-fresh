@@ -43,14 +43,14 @@ extension HelloFreshDataStore: HelloFreshPersistenceProtocol {
     }
   }
   
-  func fetchRecipes(_ completionHandler: @escaping (_ profiles: () throws -> [Recipe]) -> Void) {
+  func fetchRecipes(_ completionHandler: @escaping (_ recipes: () throws -> [Recipe]) -> Void) {
     privateManagedObjectContext.perform {
       do {
         let fetchRequest = NSFetchRequest<ManagedRecipe>(entityName: "ManagedRecipe")
         let results = try self.privateManagedObjectContext.fetch(fetchRequest)
-        let profiles = results.map { $0.toRecipe() }
+        let recipes = results.map { $0.toRecipe() }
         
-        completionHandler { return profiles }
+        completionHandler { return recipes }
       } catch {
         completionHandler { throw HelloFreshStoreError.cannotFetch("Cannot fetch recipes") }
       }
@@ -70,7 +70,7 @@ extension HelloFreshDataStore: HelloFreshPersistenceProtocol {
         }
       } catch {
         log.error(error)
-        completionHandler { throw HelloFreshStoreError.cannotFetch("Cannot fetch user with id \(recipeId)") }
+        completionHandler { throw HelloFreshStoreError.cannotFetch("Cannot fetch recipe with id \(recipeId)") }
       }
     }
   }
@@ -127,13 +127,6 @@ extension HelloFreshDataStore: HelloFreshPersistenceProtocol {
     }
   }
   
-//  @NSManaged var thumb: String
-//  @NSManaged var time: String
-//  @NSManaged var weeks: [String]
-//  @NSManaged var isFavourite: Bool
-//  @NSManaged var currentRating: Int
-//  @NSManaged var recipeUser: ManagedRecipeUser
-  
   func createRecipes(_ recipesToCreate: [Recipe], completionHandler: @escaping (() throws -> Void) -> Void) {
     privateManagedObjectContext.perform {
       do {
@@ -176,9 +169,10 @@ extension HelloFreshDataStore: HelloFreshPersistenceProtocol {
           managedRecipeUser.name = recipeToCreate.user.name
           
           managedRecipe.recipeUser = managedRecipeUser
+          
+          // save properties
+          try self.privateManagedObjectContext.save()
         }
-        // save properties
-        try self.privateManagedObjectContext.save()
         completionHandler { return }
       } catch {
         log.error(error)

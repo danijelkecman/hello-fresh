@@ -40,7 +40,7 @@ final class ExploreRecipesViewController: UIViewController {
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    removeBackText(from: self)
+    removeBackText(from: self, backButtonColor: .black)
   }
   
   // MARK: - Private methods -
@@ -49,6 +49,10 @@ final class ExploreRecipesViewController: UIViewController {
     self.title = "Explore Recipes"
     
     _setupRecipesTableUI()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(refreshDataFromDataSource),
+                                           name: Notification.Name(rawValue: Constants.NotificationConstants.recipeUpdated),
+                                           object: nil)
   }
   
   // Setup Recipes Table UI with custom RecipeTableViewCell
@@ -57,6 +61,11 @@ final class ExploreRecipesViewController: UIViewController {
     tableView.prefetchDataSource = self
     
     tableView.tableFooterView = UIView()
+  }
+  
+  @objc
+  func refreshDataFromDataSource() {
+    presenter.viewDidLoad()
   }
 }
 

@@ -38,7 +38,7 @@ class HelloFreshService {
     
   }
   
-  func fetchRecipes(_ completionHandler: @escaping (_ profiles: [Recipe]) -> Void) {
+  func fetchRecipes(_ completionHandler: @escaping (_ recipes: [Recipe]) -> Void) {
     helloFreshPersistence.fetchRecipes { (recipes: () throws -> [Recipe]) -> Void in
       do {
         let recipes = try recipes()

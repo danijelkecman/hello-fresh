@@ -18,10 +18,11 @@ protocol RecipeDetailsWireframeInterface: WireframeInterface {
 }
 
 protocol RecipeDetailsViewInterface: ViewInterface {
+  func reloadData()
 }
 
 protocol RecipeDetailsPresenterInterface: PresenterInterface {
-    func getRecipe() -> Recipe
+    func getRecipe() -> Recipe?
     func updateRecipe(with recipe: Recipe)
     func didChangeRatingFor(with rating: Float)
 }

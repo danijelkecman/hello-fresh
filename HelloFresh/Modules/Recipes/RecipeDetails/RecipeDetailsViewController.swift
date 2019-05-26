@@ -52,6 +52,9 @@ final class RecipeDetailsViewController: UIViewController {
 // MARK: - Extensions -
 
 extension RecipeDetailsViewController: RecipeDetailsViewInterface {
+  func reloadData() {
+    tableView.reloadData()
+  }
 }
 
 // MARK: - Table View Data Source
@@ -66,19 +69,20 @@ extension RecipeDetailsViewController: UITableViewDataSource {
       cell.configure(with: presenter.getRecipe())
       cell.selectionStyle = .none
       cell.recipeDetailsDelegate = self
+      return cell
     case 1:
       let cell: RecipeDetailsBodyCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(with: presenter.getRecipe())
       cell.selectionStyle = .none
+      return cell
     case 2:
       let cell: RecipeDetailsRatingCell = tableView.dequeueReusableCell(for: indexPath)
       cell.configure(with: presenter.getRecipe())
       cell.selectionStyle = .none
+      return cell
     default:
       return UITableViewCell()
     }
-    
-    return UITableViewCell()
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,6 +134,7 @@ extension RecipeDetailsViewController: RecipeDetailsHeaderProtocol, RecipeDetail
   }
   
 }
+
 
 
 

@@ -13,7 +13,7 @@ import UIKit
     func keyboardWillHide(_ notification: Notification)
 }
 
-extension KeyboardObservable where Self:UIViewController {
+extension KeyboardObservable where Self: UIViewController {
     
     func registerKeyboardNotifications() {
         NotificationCenter.default

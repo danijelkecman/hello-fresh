@@ -14,39 +14,41 @@ let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Initializations
-        _initializeDependencies(LoggerInitializer(),
-                                AppearanceInitializer())
-        
-        // Setup
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = _instantiateRootViewController()
-        window?.backgroundColor = UIColor.white
-        window?.makeKeyAndVisible()
-        
-        return true
-    }
-
-    // MARK: Private functions
+  
+  var window: UIWindow?
+  
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    private func _initializeDependencies(_ dependencyInitializers: Initializable...) {
-        for dependencyInitializer in dependencyInitializers {
-            dependencyInitializer.initialize()
-        }
-    }
+    // Initializations
+    _initializeDependencies(LoggerInitializer(),
+                            AppearanceInitializer())
     
-    private func _instantiateRootViewController() -> UIViewController {
-        let navigationController = UINavigationController()
-        
-        let wireframe = OnboardWireframe(navigationController: navigationController)
-        wireframe.show(with: .root)
-        
-        return navigationController
+    // Setup
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = _instantiateRootViewController()
+    window?.backgroundColor = UIColor.white
+    window?.makeKeyAndVisible()
+    
+    return true
+  }
+  
+  // MARK: Private functions
+  
+  private func _initializeDependencies(_ dependencyInitializers: Initializable...) {
+    for dependencyInitializer in dependencyInitializers {
+      dependencyInitializer.initialize()
     }
+  }
+  
+  private func _instantiateRootViewController() -> UIViewController {
+    let navigationController = UINavigationController()
+    
+    let wireframe = OnboardWireframe(navigationController: navigationController)
+    wireframe.show(with: .root)
+    
+    return navigationController
+  }
+  
 }
+
 

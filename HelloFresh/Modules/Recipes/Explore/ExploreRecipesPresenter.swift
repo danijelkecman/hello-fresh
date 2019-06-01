@@ -121,12 +121,11 @@ extension ExploreRecipesPresenter: ExploreRecipesPresenterInterface {
   
   func didChangeRatingFor(recipeId: String, with rating: Float) {
     _service.fetchRecipe(recipeId) { [weak self] (recipe) in
-      guard let _ = recipe else { return }
-      var recipeToUpdate = recipe!
-      recipeToUpdate.rating = rating
-      self?._service.updateRecipe(recipeToUpdate) {
+      guard var recipe = recipe else { return }
+      recipe.rating = rating
+      self?._service.updateRecipe(recipe) {
         log.info("update success")
-        self?.updateRecipeItemWith(recipe: recipeToUpdate)
+        self?.updateRecipeItemWith(recipe: recipe)
       }
     }
   }

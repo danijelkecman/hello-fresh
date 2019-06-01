@@ -16,6 +16,6 @@
     "http-auth": "^3.2.3"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.19.1"
   }
 }

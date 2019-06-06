@@ -93,6 +93,14 @@
 		69D0778B1F65CEDC000F995E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D077861F65CEDC000F995E /* LoginViewController.swift */; };
 		69D0778C1F65CEDC000F995E /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D077871F65CEDC000F995E /* LoginWireframe.swift */; };
 		69D0778F1F6608BA000F995E /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0778E1F6608BA000F995E /* OnboardingTextField.swift */; };
+		69D9003F22A24DB9003AD6BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D9003D22A24DB9003AD6BC /* Interface.storyboard */; };
+		69D9004122A24DBA003AD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D9004022A24DBA003AD6BC /* Assets.xcassets */; };
+		69D9004822A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 69D9004722A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		69D9004D22A24DBA003AD6BC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9004C22A24DBA003AD6BC /* InterfaceController.swift */; };
+		69D9004F22A24DBA003AD6BC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9004E22A24DBA003AD6BC /* ExtensionDelegate.swift */; };
+		69D9005122A24DBA003AD6BC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9005022A24DBA003AD6BC /* NotificationController.swift */; };
+		69D9005322A24DBB003AD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D9005222A24DBB003AD6BC /* Assets.xcassets */; };
+		69D9005822A24DBB003AD6BC /* HelloFresh WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 69D9003B22A24DB9003AD6BC /* HelloFresh WatchKit App.app */; };
 		69E0964D1F6EB64600D428C2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E0964C1F6EB64600D428C2 /* Recipe.swift */; };
 		69E096501F6EB85200D428C2 /* ManagedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E0964F1F6EB85200D428C2 /* ManagedRecipe.swift */; };
 		69E096521F6EB86100D428C2 /* ManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E096511F6EB86100D428C2 /* ManagedRecipe+CoreDataProperties.swift */; };
@@ -135,6 +143,48 @@
 		69FFF96F1F6D7AAD002E0DD2 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFF96E1F6D7AAD002E0DD2 /* UIFontExtensions.swift */; };
 		C0F7F1B77000037BD2BAF2C6 /* Pods_HelloFresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA55F19CD4558654912459 /* Pods_HelloFresh.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69D9004922A24DBA003AD6BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 693986F21F600861004BAEE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69D9004622A24DBA003AD6BC;
+			remoteInfo = "HelloFresh WatchKit App Extension";
+		};
+		69D9005622A24DBB003AD6BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 693986F21F600861004BAEE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69D9003A22A24DB9003AD6BC;
+			remoteInfo = "HelloFresh WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69D9005E22A24DBB003AD6BC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				69D9004822A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D9006022A24DBB003AD6BC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				69D9005822A24DBB003AD6BC /* HelloFresh WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5C7FDE1F0E33F93EF883E31B /* Pods-HelloFresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloFresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloFresh/Pods-HelloFresh.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +276,17 @@
 		69D077861F65CEDC000F995E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69D077871F65CEDC000F995E /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		69D0778E1F6608BA000F995E /* OnboardingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
+		69D9003B22A24DB9003AD6BC /* HelloFresh WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HelloFresh WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D9003E22A24DB9003AD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		69D9004022A24DBA003AD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69D9004222A24DBA003AD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69D9004722A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HelloFresh WatchKit App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D9004C22A24DBA003AD6BC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		69D9004E22A24DBA003AD6BC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		69D9005022A24DBA003AD6BC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		69D9005222A24DBB003AD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69D9005422A24DBB003AD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69D9005522A24DBB003AD6BC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		69E0964C1F6EB64600D428C2 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		69E0964F1F6EB85200D428C2 /* ManagedRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedRecipe.swift; path = Recipe/ManagedRecipe.swift; sourceTree = "<group>"; };
 		69E096511F6EB86100D428C2 /* ManagedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedRecipe+CoreDataProperties.swift"; path = "Recipe/ManagedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -279,6 +340,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69D9004422A24DBA003AD6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -311,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				693986FC1F600861004BAEE7 /* HelloFresh */,
+				69D9003C22A24DB9003AD6BC /* HelloFresh WatchKit App */,
+				69D9004B22A24DBA003AD6BC /* HelloFresh WatchKit App Extension */,
 				C26370CB3DE459FAB4D3A42D /* Frameworks */,
 				4E71BD09F33468A05DA9419B /* Pods */,
 				693986FB1F600861004BAEE7 /* Products */,
@@ -321,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				693986FA1F600861004BAEE7 /* HelloFresh.app */,
+				69D9003B22A24DB9003AD6BC /* HelloFresh WatchKit App.app */,
+				69D9004722A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -716,6 +788,29 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		69D9003C22A24DB9003AD6BC /* HelloFresh WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				69D9003D22A24DB9003AD6BC /* Interface.storyboard */,
+				69D9004022A24DBA003AD6BC /* Assets.xcassets */,
+				69D9004222A24DBA003AD6BC /* Info.plist */,
+			);
+			path = "HelloFresh WatchKit App";
+			sourceTree = "<group>";
+		};
+		69D9004B22A24DBA003AD6BC /* HelloFresh WatchKit App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				69D9004C22A24DBA003AD6BC /* InterfaceController.swift */,
+				69D9004E22A24DBA003AD6BC /* ExtensionDelegate.swift */,
+				69D9005022A24DBA003AD6BC /* NotificationController.swift */,
+				69D9005222A24DBB003AD6BC /* Assets.xcassets */,
+				69D9005422A24DBB003AD6BC /* Info.plist */,
+				69D9005522A24DBB003AD6BC /* PushNotificationPayload.apns */,
+			);
+			path = "HelloFresh WatchKit App Extension";
+			sourceTree = "<group>";
+		};
 		69E0964E1F6EB83800D428C2 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,15 +935,51 @@
 				693986F71F600861004BAEE7 /* Frameworks */,
 				693986F81F600861004BAEE7 /* Resources */,
 				D2BA6B7E3B0AEA3E1EC100CC /* [CP] Embed Pods Frameworks */,
+				69D9006022A24DBB003AD6BC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				69D9005722A24DBB003AD6BC /* PBXTargetDependency */,
 			);
 			name = HelloFresh;
 			productName = HelloFresh;
 			productReference = 693986FA1F600861004BAEE7 /* HelloFresh.app */;
 			productType = "com.apple.product-type.application";
+		};
+		69D9003A22A24DB9003AD6BC /* HelloFresh WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D9005F22A24DBB003AD6BC /* Build configuration list for PBXNativeTarget "HelloFresh WatchKit App" */;
+			buildPhases = (
+				69D9003922A24DB9003AD6BC /* Resources */,
+				69D9005E22A24DBB003AD6BC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69D9004A22A24DBA003AD6BC /* PBXTargetDependency */,
+			);
+			name = "HelloFresh WatchKit App";
+			productName = "HelloFresh WatchKit App";
+			productReference = 69D9003B22A24DB9003AD6BC /* HelloFresh WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		69D9004622A24DBA003AD6BC /* HelloFresh WatchKit App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D9005D22A24DBB003AD6BC /* Build configuration list for PBXNativeTarget "HelloFresh WatchKit App Extension" */;
+			buildPhases = (
+				69D9004322A24DBA003AD6BC /* Sources */,
+				69D9004422A24DBA003AD6BC /* Frameworks */,
+				69D9004522A24DBA003AD6BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HelloFresh WatchKit App Extension";
+			productName = "HelloFresh WatchKit App Extension";
+			productReference = 69D9004722A24DBA003AD6BC /* HelloFresh WatchKit App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -856,7 +987,7 @@
 		693986F21F600861004BAEE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Danijel Kecman";
 				TargetAttributes = {
@@ -864,6 +995,16 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4Y8HF4E9A7;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+					};
+					69D9003A22A24DB9003AD6BC = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 4Y8HF4E9A7;
+						ProvisioningStyle = Automatic;
+					};
+					69D9004622A24DBA003AD6BC = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 4Y8HF4E9A7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -882,6 +1023,8 @@
 			projectRoot = "";
 			targets = (
 				693986F91F600861004BAEE7 /* HelloFresh */,
+				69D9003A22A24DB9003AD6BC /* HelloFresh WatchKit App */,
+				69D9004622A24DBA003AD6BC /* HelloFresh WatchKit App Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -920,6 +1063,23 @@
 				69E0967B1F6EC3D300D428C2 /* MontserratAlternates-Thin.otf in Resources */,
 				69E0967E1F6EC3D300D428C2 /* Montserrat-Regular.otf in Resources */,
 				69E096821F6EC3D300D428C2 /* MontserratAlternates-ExtraLight.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D9003922A24DB9003AD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D9004122A24DBA003AD6BC /* Assets.xcassets in Resources */,
+				69D9003F22A24DB9003AD6BC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D9004522A24DBA003AD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D9005322A24DBB003AD6BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,7 +1247,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69D9004322A24DBA003AD6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D9005122A24DBA003AD6BC /* NotificationController.swift in Sources */,
+				69D9004F22A24DBA003AD6BC /* ExtensionDelegate.swift in Sources */,
+				69D9004D22A24DBA003AD6BC /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69D9004A22A24DBA003AD6BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69D9004622A24DBA003AD6BC /* HelloFresh WatchKit App Extension */;
+			targetProxy = 69D9004922A24DBA003AD6BC /* PBXContainerItemProxy */;
+		};
+		69D9005722A24DBB003AD6BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69D9003A22A24DB9003AD6BC /* HelloFresh WatchKit App */;
+			targetProxy = 69D9005622A24DBB003AD6BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69D9003D22A24DB9003AD6BC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69D9003E22A24DB9003AD6BC /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		693987201F600861004BAEE7 /* Debug */ = {
@@ -1231,6 +1425,102 @@
 			};
 			name = Release;
 		};
+		69D9005922A24DBB003AD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = HelloFresh_WatchKit_App_Extension;
+				INFOPLIST_FILE = "HelloFresh WatchKit App/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		69D9005A22A24DBB003AD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = HelloFresh_WatchKit_App_Extension;
+				INFOPLIST_FILE = "HelloFresh WatchKit App/Info.plist";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		69D9005B22A24DBB003AD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "HelloFresh WatchKit App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		69D9005C22A24DBB003AD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "HelloFresh WatchKit App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cxromos.HelloFresh.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1248,6 +1538,24 @@
 			buildConfigurations = (
 				693987231F600861004BAEE7 /* Debug */,
 				693987241F600861004BAEE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69D9005D22A24DBB003AD6BC /* Build configuration list for PBXNativeTarget "HelloFresh WatchKit App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D9005B22A24DBB003AD6BC /* Debug */,
+				69D9005C22A24DBB003AD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69D9005F22A24DBB003AD6BC /* Build configuration list for PBXNativeTarget "HelloFresh WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D9005922A24DBB003AD6BC /* Debug */,
+				69D9005A22A24DBB003AD6BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
